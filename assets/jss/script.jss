@@ -30,13 +30,11 @@ var rwfc = function(cityName)
     addCitySearched(cityName);
 }
 
-// doing this in a function makes the calling function much easier to read
 var getWeatherIconUrl = function(wIcon)
 {
     return "https://openweathermap.org/img/wn/" + wIcon + ".png";
 }
 
-// again, makes the callin function easier to read
 var getUviColorClass = function(uvi)
 {
     var colorIndex = Math.min(Math.floor(uvi), 11);
@@ -55,24 +53,24 @@ var renderWeatherForForecast = function(day, weather, now, forecastEl)
         {
             fieldIndex += "fiveday-".length;
             var fieldType = className.slice(fieldIndex, fieldIndex+4);
-
+// 5-day forcast weather information
             switch(fieldType)
             {
-                case "date": // fiveday-date
+                case "date": 
                     var theDate = now.plus({days: day});
                     forecastEl.children[i].textContent = theDate.toLocaleString();
                 break;
-                case "weat": // fiveday-weather-icon
+                case "weat": 
                     var wIconUrl = getWeatherIconUrl(weather.weather[0].icon);
                     forecastEl.children[i].src = wIconUrl;
                 break;
-                case "temp": // fiveday-temp
+                case "temp": 
                     forecastEl.children[i].getElementsByTagName("span")[0].textContent = weather.temp.day;
                 break;
-                case "wind": // fiveday-wind
+                case "wind":
                     forecastEl.children[i].getElementsByTagName("span")[0].textContent = weather.wind_speed;
                 break;
-                case "humi": // fiveday-humid
+                case "humi":
                     forecastEl.children[i].getElementsByTagName("span")[0].textContent = weather.humidity;
                 break;
                 default: // should never get here
@@ -86,7 +84,7 @@ var renderWeatherForCity = function(weatherInfo, cityName)
 {
     var now = luxon.DateTime.now();
 
-    // show the current weather in the top box
+   //Current Weather
     var currentWeather = weatherInfo.current;
     var cityDatePEl = document.querySelector("#city-date p")
     cityDatePEl.textContent =    cityName + " (" + now.toLocaleString() + ")";
@@ -96,14 +94,14 @@ var renderWeatherForCity = function(weatherInfo, cityName)
     document.querySelector("#city-wind").textContent = currentWeather.wind_speed;
     document.querySelector("#city-humid").textContent = currentWeather.humidity;
 
-    // give the uvi data a color based on the uvi
+    //color assigned to the UV index based on returned information
     var uviEl = document.querySelector("#city-uvindex");
     uviEl.textContent = currentWeather.uvi;
     uviEl.classList.remove("uv-0","uv-1","uv-2","uv-3","uv-4","uv-5","uv-6","uv-7","uv-8","uv-9","uv-10","uv-11");
     uviEl.classList.add(getUviColorClass(currentWeather.uvi));
 
 
-    // fill in the 5 day forecast
+    //5 day forecast
     var forecasts = document.getElementById("forecast-container").getElementsByTagName('div');
     
     for (var i = 0; i < forecasts.length; i++)
@@ -116,7 +114,7 @@ var getWeatherForCity = function(cityName)
 {
     var apiUrl = apiSite + "geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + myApiKey;
 
-    // this first fetch gets the lat,long of the city the user entered
+    
     fetch(apiUrl).then(function(response)
     {
         if (response.ok)
@@ -138,7 +136,7 @@ var getWeatherForCity = function(cityName)
                     + data[0].lon
                     + "&exclude=minutely,hourly,alerts&units=imperial&appid="
                     + myApiKey;
-            // get the weather data for the city the user entered/selected
+        
             return fetch(oneCallUrl);
         }
         else 
@@ -167,7 +165,7 @@ var getWeatherForCity = function(cityName)
     });
 }
 
-// user entered a city and either hit return or clicked the button
+// button click to search city
 var searchClickHandler = function(event)
 {
     event.preventDefault();
@@ -202,7 +200,7 @@ var loadCitiesSearched = function()
     }
 }
 
-// the button for a previous searched city has been clicked
+// Button click for previously searched city
 var cityClickHandler = function(event)
 {
     var cityName = event.target.textContent;

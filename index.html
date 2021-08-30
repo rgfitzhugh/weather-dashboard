@@ -9,6 +9,7 @@
     <title>Weather Dashboard</title>
 </head>
 <header>
+<!--Nav bar with gradient-->
     <nav class="navbar navbar-dark-lg bg-custom-2 justify-content-center">
         <h3 class="text-light font-weight-bold">Weather Dashboard</h3>
     </nav>
@@ -17,6 +18,7 @@
     <div class="container-md pl-3 pr-3">
         <div class="row mt-3">
             <div class="col-md-3 col-sm-12 mb-1">
+<!--Search form-->
                 <form>
                     <div class="form-group">
                         <label for="city-name" class="section-title">Search for a City:</label>
@@ -25,13 +27,14 @@
                     <button type="submit" class="btn btn-sm btn-block" id="search-button">Search</button>
                     <div class="border-top border-dark my-3"></div>
                 </form>
+<!--list of previously searched cities retrieved from local storage-->
                 <div id="cities-searched">
-
                 </div>
             </div>
             <div class="col-md-9 col-sm-12">
                 <div class="row">
                     <div class="col-12">
+<!--Current conditions for the searched city. Includes Temp, Wind, HUmidity, and UV Index-->
                         <div class="selected-city" id="city-weather">
                             <div id="city-date" class="name-weather section-title">
                                 <p class="name-weather"></p>
@@ -44,6 +47,7 @@
                         </div>
                     </div>
                 </div>
+<!--5 day forcast with date, icon, temperature, wind, humidity-->
                 <div class="row mt-2">
                     <div class="col-9">
                         <p class="section-title-sm">5-Day Forecast:</p>
