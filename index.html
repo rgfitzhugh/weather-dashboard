@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>Weather Dashboard</title>
+</head>
+<header>
+    <nav class="navbar navbar-dark-lg bg-custom-2 justify-content-center">
+        <h3 class="text-light font-weight-bold">Weather Dashboard</h3>
+    </nav>
+</header>
+<body>
+    <div class="container-lg pl-3">
+        <div class="row mt-3">
+            <div class="col-md-3 col-sm-12 mb-1">
+                <form>
+                    <div class="form-group">
+                        <label for="city-name" class="section-title">Search for a City:</label>
+                        <input type="text" class="form-control" id="city-name">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm btn-block" id="search-button">Search</button>
+                    <div class="border-top border-dark my-3"></div>
+                </form>
+                <div id="cities-searched"></div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="selected-city" id="city-weather">
+                            <div id="city-date" class="name-weather section-title">
+                                <p class="name-weather"></p>
+                                <img class="name-weather" id="weather-icon"/>
+                            </div>
+                            <p>Temp: <span id="city-temp"></span>&#176 F</p>
+                            <p>Wind: <span id="city-wind"></span> MPH</p>
+                            <p>Humidity: <span id="city-humid"></span>%</p>
+                            <p>UV Index: <span id="city-uvindex"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-9">
+                        <p class="section-title-sm">5-Day Forecast:</p>
+                    </div>
+                </div>
+                <div class="row" id="forecast-container">
+                    <div class="col-md col-sm-12 fiveday mx-3 my-1 px-1">
+                        <p class="fiveday-date mb-1"></p>
+                        <img class="fiveday-weather-icon mb-1"/>
+                        <p class="fiveday-temp">Temp: <span></span>&#176 F</p>
+                        <p class="fiveday-wind">Wind: <span></span> MPH</p>
+                        <p class="fiveday-humid">Humidity: <span></span>%</p>
+                    </div>
+                    <div class="col-md col-sm-12 fiveday mx-3 my-1 px-1">
+                        <p class="fiveday-date mb-1"></p>
+                        <img class="fiveday-weather-icon mb-1"/>
+                        <p class="fiveday-temp">Temp: <span></span>&#176 F</p>
+                        <p class="fiveday-wind">Wind: <span></span> MPH</p>
+                        <p class="fiveday-humid">Humidity: <span></span>%</p>
+                    </div>
+                    <div class="col-md col-sm-12 fiveday mx-3 my-1 px-1">
+                        <p class="fiveday-date mb-1"></p>
+                        <img class="fiveday-weather-icon mb-1"/>
+                        <p class="fiveday-temp">Temp: <span></span>&#176 F</p>
+                        <p class="fiveday-wind">Wind: <span></span> MPH</p>
+                        <p class="fiveday-humid">Humidity: <span></span>%</p>
+                    </div>
+                    <div class="col-md col-sm-12 fiveday mx-3 my-1 px-1">
+                        <p class="fiveday-date mb-1"></p>
+                        <img class="fiveday-weather-icon mb-1"/>
+                        <p class="fiveday-temp">Temp: <span></span>&#176 F</p>
+                        <p class="fiveday-wind">Wind: <span></span> MPH</p>
+                        <p class="fiveday-humid">Humidity: <span></span>%</p>
+                    </div>
+                    <div class="col-md col-sm-12 fiveday mx-3 my-1 px-1">
+                        <p class="fiveday-date mb-1"></p>
+                        <img class="fiveday-weather-icon mb-1"/>
+                        <p class="fiveday-temp">Temp: <span></span>&#176 F</p>
+                        <p class="fiveday-wind">Wind: <span></span> MPH</p>
+                        <p class="fiveday-humid">Humidity: <span></span>%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/jss/script.js"></script>
+</body>
+</html>
