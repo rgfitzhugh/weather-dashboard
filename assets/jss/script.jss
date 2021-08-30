@@ -9,7 +9,7 @@ var addCitySearchedButton = function(cityName)
 {
     var buttonEl = document.createElement("button");
     buttonEl.innerHTML = cityName;
-    buttonEl.classList.add("btn","btn-secondary","btn-sm","btn-block","customBtn");
+    buttonEl.classList.add("btn","btn-sm","btn-block",);
     var citiesSearchedEl = document.querySelector("#cities-searched");
     citiesSearchedEl.appendChild(buttonEl);
 }
