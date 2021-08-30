@@ -2,3 +2,80 @@
     background-image: linear-gradient(15deg, #447ad1 0%, #3d256b 100%);
 }
 
+#search-button {
+    background-color: rgb(22, 161, 241);
+    color: white;
+}
+
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.section-title-sm {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.fiveday  {
+    background-color: #2d3e50;
+    color: white;
+    font-size: .75em;
+}
+
+.fiveday-date {
+    font-weight: bold;
+}
+
+.name-weather {
+    display:inline;
+    white-space:nowrap;
+}
+
+#weather-icon {
+    height: 1.5em;
+    filter: drop-shadow(2px 2px);
+    margin-top: 0;
+}
+
+#city-uvindex {
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    color: white;
+}
+
+.selected-city {
+    border: 1px black solid;
+    padding: 5px;
+}
+
+.uv-0, .uv-1, .uv-2 {
+    background-color: #289500;
+}
+
+.uv-3, .uv-4, .uv-5 {
+    background-color: #f7e400;
+}
+
+.uv-6, .uv-7 {
+    background-color: #f85900;
+}
+
+.uv-8, .uv-9, .uv-10 {
+    background-color: #d80010;
+}
+
+.uv-11 {
+    background-color: #6b49c8;
+}
+
+.fiveday-weather-icon {
+    filter: drop-shadow(2px 2px white);
+    height: 2.25em;
+}
+
+.fiveday {
+    display: none;
+}
